@@ -7,141 +7,159 @@
   <meta name="description" content="Media kit for Roldan Sierra, Chicago entrepreneur and creator.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;800;900&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #f5f4f0;
-      --card: #ffffff;
-      --ink: #121212;
-      --muted: #5f5f5a;
-      --line: #e3e1da;
-      --accent: #2f5bea;
-      --accent-ink: #ffffff;
-    }
-    @media (prefers-color-scheme: dark) {
-      :root { --bg: #0f0f10; --card: #18181a; --ink: #f2f2ee; --muted: #a2a29b; --line: #2a2a2d; --accent: #6b8cff; --accent-ink: #0f0f10; }
+      --white: #ffffff;
+      --black: #0a0a0a;
+      --grey: #6e6e6e;
+      --line: #0a0a0a;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { background: var(--white); }
     body {
-      background: var(--bg);
-      color: var(--ink);
-      font-family: "Inter", system-ui, sans-serif;
-      line-height: 1.55;
+      background: var(--white);
+      color: var(--black);
+      font-family: "Archivo", system-ui, sans-serif;
+      line-height: 1.5;
       -webkit-font-smoothing: antialiased;
     }
-    .wrap { max-width: 880px; margin: 0 auto; padding: 48px 16px 64px; }
-    .eyebrow {
-      font-size: 13px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase;
-      color: var(--accent); margin-bottom: 18px;
+    .wrap { max-width: 1040px; margin: 0 auto; padding: 0 16px; }
+    @media (min-width: 720px) { .wrap { padding: 0 40px; } }
+
+    /* top bar */
+    .bar {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 20px 0; border-bottom: 1px solid var(--line);
+      font-size: 12px; font-weight: 500; letter-spacing: .18em; text-transform: uppercase;
     }
-    h1 {
-      font-family: "Space Grotesk", sans-serif; font-weight: 700;
-      font-size: clamp(2.8rem, 10vw, 5.5rem); line-height: .95; letter-spacing: -0.03em;
+
+    /* hero */
+    .hero { padding: 56px 0 40px; border-bottom: 1px solid var(--line); }
+    .hero h1 {
+      font-weight: 900; text-transform: uppercase;
+      font-size: clamp(3.4rem, 15vw, 9.5rem); line-height: .86; letter-spacing: -0.045em;
     }
-    .tagline { margin-top: 14px; font-size: 1.05rem; color: var(--muted); }
-    .tagline b { color: var(--ink); font-weight: 600; }
-    section { margin-top: 48px; }
-    h2 {
-      font-size: 13px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase;
-      color: var(--muted); margin-bottom: 14px;
+    .hero .serif {
+      display: block; font-family: "Instrument Serif", Georgia, serif; font-style: italic;
+      font-weight: 400; text-transform: none; letter-spacing: -0.01em;
+      font-size: clamp(1.6rem, 5vw, 2.6rem); line-height: 1.1; margin-top: 18px;
     }
-    .card { background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 28px; }
-    .bio { font-size: 1.15rem; max-width: 60ch; }
-    .reach { display: grid; grid-template-columns: 1fr; gap: 14px; }
-    @media (min-width: 640px) { .reach { grid-template-columns: 1.1fr 2fr; } }
+    .hero-meta {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 40px;
+      font-size: 12px; letter-spacing: .14em; text-transform: uppercase;
+    }
+    @media (min-width: 720px) { .hero-meta { grid-template-columns: repeat(4, 1fr); } }
+    .hero-meta span { display: block; color: var(--grey); margin-bottom: 4px; }
+    .hero-meta b { font-weight: 800; }
+
+    /* sections */
+    .sec { display: grid; grid-template-columns: 1fr; gap: 20px; padding: 48px 0; border-bottom: 1px solid var(--line); }
+    @media (min-width: 720px) { .sec { grid-template-columns: 220px 1fr; gap: 40px; padding: 64px 0; } }
+    .label { font-size: 12px; font-weight: 500; letter-spacing: .18em; text-transform: uppercase; }
+    .label i { font-style: normal; color: var(--grey); margin-right: 10px; }
+    .bio {
+      font-family: "Instrument Serif", Georgia, serif;
+      font-size: clamp(1.6rem, 4.6vw, 2.5rem); line-height: 1.18; letter-spacing: -0.01em; max-width: 26ch;
+    }
+
+    /* reach */
     .big {
-      font-family: "Space Grotesk", sans-serif; font-weight: 700;
-      font-size: clamp(3rem, 12vw, 4.5rem); line-height: 1; letter-spacing: -0.03em;
+      font-weight: 900; font-size: clamp(4.5rem, 20vw, 10rem); line-height: .85; letter-spacing: -0.05em;
     }
-    .big-label { margin-top: 8px; color: var(--muted); font-size: .95rem; }
-    .platforms { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-    .platform {
-      display: flex; align-items: center; gap: 12px;
-      border: 1px solid var(--line); border-radius: 14px; padding: 16px; background: var(--card);
-      font-weight: 600;
+    .big-sub { margin-top: 12px; font-size: 13px; letter-spacing: .16em; text-transform: uppercase; color: var(--grey); }
+    .platforms { list-style: none; margin-top: 36px; border-top: 1px solid var(--line); }
+    .platforms li { border-bottom: 1px solid var(--line); }
+    .platforms a, .platforms div {
+      display: flex; justify-content: space-between; align-items: center; gap: 16px;
+      padding: 18px 0; color: inherit; text-decoration: none;
+      font-weight: 800; font-size: clamp(1.2rem, 4vw, 1.6rem); text-transform: uppercase; letter-spacing: -0.01em;
     }
-    .platform svg { width: 22px; height: 22px; flex: none; fill: currentColor; }
-    a.platform { color: inherit; text-decoration: none; transition: border-color .15s ease; }
-    a.platform:hover { border-color: var(--accent); }
-    a.platform:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
-    .platform span { display: flex; flex-direction: column; min-width: 0; }
-    .platform small { font-weight: 500; font-size: .8rem; color: var(--muted); overflow-wrap: anywhere; }
-    .rates { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px; }
-    .rates h3 { font-family: "Space Grotesk", sans-serif; font-size: 1.6rem; letter-spacing: -0.02em; }
-    .rates p { color: var(--muted); margin-top: 4px; }
+    .platforms small {
+      font-weight: 500; font-size: 13px; letter-spacing: .06em; text-transform: none; color: var(--grey);
+      overflow-wrap: anywhere; text-align: right;
+    }
+    .platforms a:hover small, .platforms a:focus-visible small { color: var(--black); text-decoration: underline; }
+    .platforms a:focus-visible { outline: 2px solid var(--black); outline-offset: 4px; }
+
+    /* cta */
+    .cta { background: var(--black); color: var(--white); }
+    .cta .wrap { padding-top: 64px; padding-bottom: 64px; }
+    .cta .label i { color: #9a9a9a; }
+    .cta h2 {
+      margin-top: 22px; font-weight: 900; text-transform: uppercase;
+      font-size: clamp(2.8rem, 12vw, 7rem); line-height: .88; letter-spacing: -0.045em;
+    }
+    .cta h2 em {
+      font-family: "Instrument Serif", Georgia, serif; font-style: italic; font-weight: 400;
+      text-transform: none; letter-spacing: -0.01em;
+    }
+    .cta p { margin-top: 20px; max-width: 46ch; color: #c9c9c9; font-size: 1.05rem; }
     .btn {
-      display: inline-flex; align-items: center; gap: 10px;
-      background: var(--accent); color: var(--accent-ink); text-decoration: none;
-      font-weight: 600; font-size: 1rem; padding: 15px 24px; border-radius: 999px;
-      transition: transform .15s ease, box-shadow .15s ease;
+      display: inline-flex; align-items: center; gap: 14px; margin-top: 34px;
+      background: var(--white); color: var(--black); text-decoration: none;
+      font-weight: 800; font-size: 14px; letter-spacing: .16em; text-transform: uppercase;
+      padding: 18px 28px; border: 1px solid var(--white);
+      transition: background .15s ease, color .15s ease;
     }
-    .btn:hover { transform: translateY(-1px); box-shadow: 0 8px 24px color-mix(in srgb, var(--accent) 35%, transparent); }
-    .btn:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
-    .email { margin-top: 10px; font-size: .9rem; color: var(--muted); word-break: break-all; }
-    footer { margin-top: 56px; font-size: .85rem; color: var(--muted); }
+    .btn:hover { background: var(--black); color: var(--white); }
+    .btn:focus-visible { outline: 2px solid var(--white); outline-offset: 4px; }
+    .email { display: block; margin-top: 14px; color: #9a9a9a; font-size: 14px; overflow-wrap: anywhere; }
+
+    footer {
+      display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px;
+      padding: 22px 0; font-size: 12px; letter-spacing: .16em; text-transform: uppercase;
+    }
   </style>
 </head>
 <body>
   <div class="wrap">
-    <header>
-      <div class="eyebrow">Media Kit</div>
-      <h1>Roldan<br>Sierra</h1>
-      <p class="tagline"><b>Chicago</b> entrepreneur &amp; creator</p>
+    <div class="bar"><span>Roldan Sierra</span><span>Media Kit</span></div>
+
+    <header class="hero">
+      <h1>Roldan<br>Sierra
+        <span class="serif">Chicago entrepreneur &amp; creator</span>
+      </h1>
+      <div class="hero-meta">
+        <div><span>Based in</span><b>Chicago, IL</b></div>
+        <div><span>Reach</span><b>5,000+</b></div>
+        <div><span>Platforms</span><b>4</b></div>
+        <div><span>Rates</span><b>On request</b></div>
+      </div>
     </header>
 
-    <section>
-      <h2>About</h2>
-      <div class="card">
-        <p class="bio">I'm a Chicago native and active city entrepreneur. I love helping others and meeting new people. This is my journey, and helping others is what it's all about.</p>
-      </div>
+    <section class="sec">
+      <div class="label"><i>01</i>About</div>
+      <p class="bio">I'm a Chicago native and active city entrepreneur. I love helping others and meeting new people. This is my journey, and helping others is what it's all about.</p>
     </section>
 
-    <section>
-      <h2>Reach</h2>
-      <div class="reach">
-        <div class="card">
-          <div class="big">5,000+</div>
-          <div class="big-label">followers across four platforms</div>
-        </div>
-        <div class="platforms">
-          <div class="platform">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.6 5.8A4.3 4.3 0 0 1 15.5 3h-3.1v12.4a2.6 2.6 0 1 1-2.6-2.6c.3 0 .5 0 .8.1V9.7a5.7 5.7 0 1 0 4.9 5.7V9.1a7.4 7.4 0 0 0 4.3 1.4V7.4a4.3 4.3 0 0 1-3.2-1.6z"/></svg>
-            TikTok
-          </div>
-          <a class="platform" href="https://www.instagram.com/sierradelsol_/" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2c3.2 0 3.6 0 4.8.1 3.2.1 4.8 1.7 4.9 4.9.1 1.3.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 3.2-1.7 4.8-4.9 4.9-1.3.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-3.3-.1-4.8-1.7-4.9-4.9C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.8C2.4 3.9 3.9 2.4 7.2 2.3 8.4 2.2 8.8 2.2 12 2.2zM12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 8.2a3.2 3.2 0 1 1 0-6.4 3.2 3.2 0 0 1 0 6.4zm5.2-9.6a1.2 1.2 0 1 0 0 2.4 1.2 1.2 0 0 0 0-2.4z"/></svg>
-            <span>Instagram<small>@sierradelsol_</small></span>
-          </a>
-          <div class="platform">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.3v7A10 10 0 0 0 22 12z"/></svg>
-            Facebook
-          </div>
-          <div class="platform">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg>
-            YouTube
-          </div>
-        </div>
+    <section class="sec">
+      <div class="label"><i>02</i>Reach</div>
+      <div>
+        <div class="big">5K+</div>
+        <div class="big-sub">Followers across four platforms</div>
+        <ul class="platforms">
+          <li><a href="https://www.instagram.com/sierradelsol_/" target="_blank" rel="noopener">Instagram <small>@sierradelsol_ ↗</small></a></li>
+          <li><div>TikTok</div></li>
+          <li><div>Facebook</div></li>
+          <li><div>YouTube</div></li>
+        </ul>
       </div>
     </section>
+  </div>
 
-    <section>
-      <h2>Work with me</h2>
-      <div class="card rates">
-        <div>
-          <h3>Rates on request</h3>
-          <p>Brand partnerships, sponsored content and local collaborations.</p>
-        </div>
-        <div>
-          <a class="btn" href="mailto:roldansierra17@gmail.com?subject=Partnership%20inquiry">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
-            Email me
-          </a>
-          <div class="email">roldansierra17@gmail.com</div>
-        </div>
-      </div>
-    </section>
+  <section class="cta">
+    <div class="wrap">
+      <div class="label"><i>03</i>Work with me</div>
+      <h2>Rates on <em>request</em></h2>
+      <p>Brand partnerships, sponsored content and local Chicago collaborations.</p>
+      <a class="btn" href="mailto:roldansierra17@gmail.com?subject=Partnership%20inquiry">Email me <span aria-hidden="true">→</span></a>
+      <span class="email">roldansierra17@gmail.com</span>
+    </div>
+  </section>
 
-    <footer>© Roldan Sierra · Chicago, IL</footer>
+  <div class="wrap">
+    <footer><span>© Roldan Sierra</span><span>Chicago, IL</span></footer>
   </div>
 </body>
 </html>
