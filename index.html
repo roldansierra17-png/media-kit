@@ -7,159 +7,195 @@
   <meta name="description" content="Media kit for Roldan Sierra, Chicago entrepreneur and creator.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;800;900&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
     :root {
+      --paper: #f4f4f4;
+      --ink: #111111;
+      --soft: #4a4a4a;
+      --dark: #141414;
       --white: #ffffff;
-      --black: #0a0a0a;
-      --grey: #6e6e6e;
-      --line: #0a0a0a;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { background: var(--white); }
+    html, body { background: var(--paper); }
     body {
-      background: var(--white);
-      color: var(--black);
-      font-family: "Archivo", system-ui, sans-serif;
-      line-height: 1.5;
+      color: var(--ink);
+      font-family: "Inter", system-ui, sans-serif;
+      font-size: 16px; line-height: 1.55;
       -webkit-font-smoothing: antialiased;
     }
-    .wrap { max-width: 1040px; margin: 0 auto; padding: 0 16px; }
-    @media (min-width: 720px) { .wrap { padding: 0 40px; } }
+    .wrap { max-width: 1120px; margin: 0 auto; padding: 0 16px; }
+    @media (min-width: 760px) { .wrap { padding: 0 56px; } }
 
-    /* top bar */
-    .bar {
-      display: flex; justify-content: space-between; align-items: center;
-      padding: 20px 0; border-bottom: 1px solid var(--line);
-      font-size: 12px; font-weight: 500; letter-spacing: .18em; text-transform: uppercase;
+    .head {
+      font-family: "Montserrat", sans-serif; font-weight: 800; text-transform: lowercase;
+      letter-spacing: -0.04em; line-height: .9;
     }
 
-    /* hero */
-    .hero { padding: 56px 0 40px; border-bottom: 1px solid var(--line); }
-    .hero h1 {
-      font-weight: 900; text-transform: uppercase;
-      font-size: clamp(3.4rem, 15vw, 9.5rem); line-height: .86; letter-spacing: -0.045em;
+    /* top + bottom rows */
+    .row {
+      display: flex; justify-content: space-between; align-items: center; gap: 12px;
+      padding-top: 24px; padding-bottom: 24px; font-size: 14px; font-weight: 500;
     }
-    .hero .serif {
-      display: block; font-family: "Instrument Serif", Georgia, serif; font-style: italic;
-      font-weight: 400; text-transform: none; letter-spacing: -0.01em;
-      font-size: clamp(1.6rem, 5vw, 2.6rem); line-height: 1.1; margin-top: 18px;
-    }
-    .hero-meta {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 40px;
-      font-size: 12px; letter-spacing: .14em; text-transform: uppercase;
-    }
-    @media (min-width: 720px) { .hero-meta { grid-template-columns: repeat(4, 1fr); } }
-    .hero-meta span { display: block; color: var(--grey); margin-bottom: 4px; }
-    .hero-meta b { font-weight: 800; }
+    .row b { font-weight: 700; font-family: "Montserrat", sans-serif; }
 
-    /* sections */
-    .sec { display: grid; grid-template-columns: 1fr; gap: 20px; padding: 48px 0; border-bottom: 1px solid var(--line); }
-    @media (min-width: 720px) { .sec { grid-template-columns: 220px 1fr; gap: 40px; padding: 64px 0; } }
-    .label { font-size: 12px; font-weight: 500; letter-spacing: .18em; text-transform: uppercase; }
-    .label i { font-style: normal; color: var(--grey); margin-right: 10px; }
-    .bio {
-      font-family: "Instrument Serif", Georgia, serif;
-      font-size: clamp(1.6rem, 4.6vw, 2.5rem); line-height: 1.18; letter-spacing: -0.01em; max-width: 26ch;
+    /* hero (dark, centered, like the cover slide) */
+    .hero {
+      position: relative; color: var(--white);
+      background:
+        radial-gradient(ellipse at 50% 35%, #3a3a3a 0%, #1c1c1c 55%, #0d0d0d 100%);
+      min-height: 88vh; min-height: 88svh;
+      display: flex; flex-direction: column;
     }
+    .hero .row { color: var(--white); }
+    .hero > .wrap { width: 100%; }
+    .hero-center { flex: 1; display: grid; place-items: center; text-align: center; padding: 32px 0; }
+    .hero h1 { font-size: clamp(4.2rem, 21vw, 13rem); }
+    .hero h1 span {
+      display: block; font-size: .36em; letter-spacing: -0.03em; margin-top: .12em;
+    }
+    .hero-foot {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 10px 16px; padding-top: 24px; padding-bottom: 24px;
+      font-size: 13px; font-weight: 500;
+    }
+    @media (min-width: 760px) { .hero-foot { grid-template-columns: repeat(4, auto); justify-content: space-between; font-size: 14px; } }
+    .hero-foot b { font-family: "Montserrat", sans-serif; font-weight: 700; }
+    .hero-foot a { color: inherit; text-decoration: none; overflow-wrap: anywhere; }
 
-    /* reach */
-    .big {
-      font-weight: 900; font-size: clamp(4.5rem, 20vw, 10rem); line-height: .85; letter-spacing: -0.05em;
-    }
-    .big-sub { margin-top: 12px; font-size: 13px; letter-spacing: .16em; text-transform: uppercase; color: var(--grey); }
-    .platforms { list-style: none; margin-top: 36px; border-top: 1px solid var(--line); }
-    .platforms li { border-bottom: 1px solid var(--line); }
-    .platforms a, .platforms div {
-      display: flex; justify-content: space-between; align-items: center; gap: 16px;
-      padding: 18px 0; color: inherit; text-decoration: none;
-      font-weight: 800; font-size: clamp(1.2rem, 4vw, 1.6rem); text-transform: uppercase; letter-spacing: -0.01em;
-    }
-    .platforms small {
-      font-weight: 500; font-size: 13px; letter-spacing: .06em; text-transform: none; color: var(--grey);
-      overflow-wrap: anywhere; text-align: right;
-    }
-    .platforms a:hover small, .platforms a:focus-visible small { color: var(--black); text-decoration: underline; }
-    .platforms a:focus-visible { outline: 2px solid var(--black); outline-offset: 4px; }
+    /* content slides */
+    .slide { padding: 72px 0; }
+    @media (min-width: 760px) { .slide { padding: 104px 0; } }
+    .split { display: grid; grid-template-columns: 1fr; gap: 48px; align-items: center; }
+    @media (min-width: 860px) { .split { grid-template-columns: 1fr 1fr; gap: 64px; } }
+    .slide h2 { font-size: clamp(3.4rem, 13vw, 6.4rem); }
+    .lead { margin-top: 28px; font-size: 1.1rem; max-width: 42ch; }
+    .lead + .lead { margin-top: 18px; color: var(--soft); max-width: 36ch; }
 
-    /* cta */
-    .cta { background: var(--black); color: var(--white); }
-    .cta .wrap { padding-top: 64px; padding-bottom: 64px; }
-    .cta .label i { color: #9a9a9a; }
-    .cta h2 {
-      margin-top: 22px; font-weight: 900; text-transform: uppercase;
-      font-size: clamp(2.8rem, 12vw, 7rem); line-height: .88; letter-spacing: -0.045em;
+    /* framed panel with offset black block */
+    .frame { position: relative; padding: 32px 0 0 32px; }
+    .frame::before {
+      content: ""; position: absolute; top: 0; left: 0; width: 72%; height: 48%; background: var(--ink);
     }
-    .cta h2 em {
-      font-family: "Instrument Serif", Georgia, serif; font-style: italic; font-weight: 400;
-      text-transform: none; letter-spacing: -0.01em;
+    .panel {
+      position: relative; background: var(--dark); color: var(--white);
+      aspect-ratio: 4 / 3.2; display: flex; flex-direction: column; justify-content: flex-end;
+      padding: 28px;
+      background-image: linear-gradient(160deg, #2e2e2e 0%, #121212 70%);
     }
-    .cta p { margin-top: 20px; max-width: 46ch; color: #c9c9c9; font-size: 1.05rem; }
+    .panel .num { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: clamp(4rem, 16vw, 7rem); line-height: .9; letter-spacing: -0.04em; }
+    .panel .cap { margin-top: 10px; font-size: 14px; color: #cfcfcf; }
+
+    /* platforms (like the skills slide) */
+    .banner { position: relative; padding: 24px 0 0 0; margin-bottom: 40px; }
+    .banner::before { content: ""; position: absolute; top: 0; left: 0; width: 30%; height: 70%; background: var(--ink); }
+    .banner-inner {
+      position: relative; margin-left: 24px; height: 160px;
+      background: linear-gradient(110deg, #2a2a2a 0%, #555 55%, #1a1a1a 100%);
+      display: flex; align-items: flex-end; padding: 20px 24px; color: var(--white);
+      font-family: "Montserrat", sans-serif; font-weight: 700; font-size: 14px; letter-spacing: .02em;
+    }
+    @media (min-width: 760px) { .banner-inner { margin-left: 120px; height: 200px; } }
+    .plist { display: grid; gap: 26px; }
+    .plist h3 { font-family: "Montserrat", sans-serif; font-weight: 700; font-size: 1.15rem; }
+    .plist p { margin-top: 4px; color: var(--soft); }
+    .plist a { color: var(--ink); font-weight: 600; text-underline-offset: 3px; overflow-wrap: anywhere; }
+
+    /* work with me */
+    .cta { background: var(--ink); color: var(--white); }
+    .cta h2 { color: var(--white); }
+    .cta .lead { color: #d4d4d4; }
     .btn {
-      display: inline-flex; align-items: center; gap: 14px; margin-top: 34px;
-      background: var(--white); color: var(--black); text-decoration: none;
-      font-weight: 800; font-size: 14px; letter-spacing: .16em; text-transform: uppercase;
-      padding: 18px 28px; border: 1px solid var(--white);
-      transition: background .15s ease, color .15s ease;
+      display: inline-flex; align-items: center; gap: 12px; margin-top: 36px;
+      background: var(--white); color: var(--ink); text-decoration: none;
+      font-family: "Montserrat", sans-serif; font-weight: 700; font-size: 16px;
+      padding: 18px 30px; border-radius: 999px; transition: transform .15s ease;
     }
-    .btn:hover { background: var(--black); color: var(--white); }
-    .btn:focus-visible { outline: 2px solid var(--white); outline-offset: 4px; }
-    .email { display: block; margin-top: 14px; color: #9a9a9a; font-size: 14px; overflow-wrap: anywhere; }
+    .btn:hover { transform: translateY(-2px); }
+    .btn:focus-visible { outline: 3px solid var(--white); outline-offset: 4px; }
+    .mail { display: block; margin-top: 14px; color: #9b9b9b; font-size: 14px; overflow-wrap: anywhere; }
 
-    footer {
-      display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px;
-      padding: 22px 0; font-size: 12px; letter-spacing: .16em; text-transform: uppercase;
+    .foot {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 10px 16px; padding-top: 28px; padding-bottom: 28px;
+      font-size: 13px; font-weight: 500;
     }
+    @media (min-width: 760px) { .foot { grid-template-columns: repeat(4, auto); justify-content: space-between; font-size: 14px; } }
+    .foot b { font-family: "Montserrat", sans-serif; font-weight: 700; }
+    .foot a { color: inherit; text-decoration: none; overflow-wrap: anywhere; }
   </style>
 </head>
 <body>
-  <div class="wrap">
-    <div class="bar"><span>Roldan Sierra</span><span>Media Kit</span></div>
 
-    <header class="hero">
-      <h1>Roldan<br>Sierra
-        <span class="serif">Chicago entrepreneur &amp; creator</span>
-      </h1>
-      <div class="hero-meta">
-        <div><span>Based in</span><b>Chicago, IL</b></div>
-        <div><span>Reach</span><b>5,000+</b></div>
-        <div><span>Platforms</span><b>4</b></div>
-        <div><span>Rates</span><b>On request</b></div>
-      </div>
-    </header>
+  <!-- cover -->
+  <header class="hero">
+    <div class="wrap row"><b>Media Kit</b><span>Chicago, IL</span></div>
+    <div class="hero-center wrap">
+      <h1 class="head">roldan<span>sierra</span></h1>
+    </div>
+    <div class="wrap hero-foot">
+      <b>Roldan Sierra</b>
+      <a href="mailto:roldansierra17@gmail.com">roldansierra17@gmail.com</a>
+      <a href="https://www.instagram.com/sierradelsol_/" target="_blank" rel="noopener">@sierradelsol_</a>
+      <span>Entrepreneur &amp; creator</span>
+    </div>
+  </header>
 
-    <section class="sec">
-      <div class="label"><i>01</i>About</div>
-      <p class="bio">I'm a Chicago native and active city entrepreneur. I love helping others and meeting new people. This is my journey, and helping others is what it's all about.</p>
-    </section>
-
-    <section class="sec">
-      <div class="label"><i>02</i>Reach</div>
+  <!-- intro -->
+  <section class="slide">
+    <div class="wrap split">
       <div>
-        <div class="big">5K+</div>
-        <div class="big-sub">Followers across four platforms</div>
-        <ul class="platforms">
-          <li><a href="https://www.instagram.com/sierradelsol_/" target="_blank" rel="noopener">Instagram <small>@sierradelsol_ ↗</small></a></li>
-          <li><div>TikTok</div></li>
-          <li><div>Facebook</div></li>
-          <li><div>YouTube</div></li>
-        </ul>
+        <h2 class="head">intro-<br>duction</h2>
+        <p class="lead">I'm a Chicago native and active city entrepreneur. I love helping others and meeting new people.</p>
+        <p class="lead">This is my journey, and helping others is what it's all about.</p>
       </div>
-    </section>
-  </div>
-
-  <section class="cta">
-    <div class="wrap">
-      <div class="label"><i>03</i>Work with me</div>
-      <h2>Rates on <em>request</em></h2>
-      <p>Brand partnerships, sponsored content and local Chicago collaborations.</p>
-      <a class="btn" href="mailto:roldansierra17@gmail.com?subject=Partnership%20inquiry">Email me <span aria-hidden="true">→</span></a>
-      <span class="email">roldansierra17@gmail.com</span>
+      <div class="frame">
+        <div class="panel">
+          <div class="num">5K+</div>
+          <div class="cap">followers across Instagram, TikTok, Facebook &amp; YouTube</div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <div class="wrap">
-    <footer><span>© Roldan Sierra</span><span>Chicago, IL</span></footer>
-  </div>
+  <!-- platforms -->
+  <section class="slide" style="padding-top:0">
+    <div class="wrap">
+      <div class="banner"><div class="banner-inner">Instagram · TikTok · Facebook · YouTube</div></div>
+      <div class="split" style="align-items:start">
+        <div>
+          <h2 class="head">my<br>platforms</h2>
+          <p class="lead">Sharing my journey as a Chicago entrepreneur with a growing community across four platforms.</p>
+        </div>
+        <div class="plist">
+          <div><h3>Instagram</h3><p><a href="https://www.instagram.com/sierradelsol_/" target="_blank" rel="noopener">@sierradelsol_</a></p></div>
+          <div><h3>TikTok</h3><p>Short-form video</p></div>
+          <div><h3>Facebook</h3><p>Community &amp; local audience</p></div>
+          <div><h3>YouTube</h3><p>Long-form video</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- work with me -->
+  <section class="slide cta">
+    <div class="wrap split">
+      <div>
+        <h2 class="head">work<br>with me</h2>
+      </div>
+      <div>
+        <p class="lead" style="margin-top:0;font-size:1.35rem;color:#fff;font-family:Montserrat,sans-serif;font-weight:700">Rates on request</p>
+        <p class="lead">Brand partnerships, sponsored content and local Chicago collaborations.</p>
+        <a class="btn" href="mailto:roldansierra17@gmail.com?subject=Partnership%20inquiry">Email me <span aria-hidden="true">→</span></a>
+        <span class="mail">roldansierra17@gmail.com</span>
+      </div>
+    </div>
+  </section>
+
+  <footer class="wrap foot">
+    <b>Roldan Sierra</b>
+    <a href="mailto:roldansierra17@gmail.com">roldansierra17@gmail.com</a>
+    <a href="https://www.instagram.com/sierradelsol_/" target="_blank" rel="noopener">@sierradelsol_</a>
+    <span>Chicago, IL</span>
+  </footer>
+
 </body>
 </html>
